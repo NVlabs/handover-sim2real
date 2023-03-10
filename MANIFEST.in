@@ -1,0 +1,15 @@
+# Copyright (c) 2022-2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#
+# Licensed under the NVIDIA License [see LICENSE for details].
+
+# This file list the additional files that should be included in the package distribution.
+#
+# References:
+# * https://packaging.python.org/guides/using-manifest-in/
+# * https://setuptools.readthedocs.io/en/latest/userguide/datafiles.html
+# * https://stackoverflow.com/questions/6028000/how-to-read-a-static-file-from-inside-a-python-package
+
+# Marker file for PEP 561 (https://www.python.org/dev/peps/pep-0561/) stating that this package uses inline types.
+global-include py.typed
+
+# graft <path to additional files or directories to add to the project>

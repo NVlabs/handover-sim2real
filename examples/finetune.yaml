@@ -1,0 +1,24 @@
+ENV:
+  ID: HandoverSim2RealTrainEnv-v1
+  YCB_MANO_START_FRAME: one_and_half_second
+  YCB_LOAD_MODE: grasp_only
+  MANO_SIMULATION_MODE: disable_control_and_move_by_reset
+  HANDOVER_HAND_CAMERA_POINT_STATE_ENV:
+    COMPUTE_MANO_POINT_STATE: True
+BENCHMARK:
+  SPLIT: train
+RL_MEMORY_SIZE: 200000
+RL_TRAIN:
+  batch_size: 128
+  updates_per_step: 20
+  mix_policy_ratio_list: [0.2]
+  save_epoch: [240000, 280000]
+  online_buffer_ratio: 1.0
+  onpolicy: True
+  max_epoch: 300000
+  num_remotes: 3
+  explore_ratio_list: [0.7]
+  EXPERT_INIT_MIN_STEP: 3
+  fill_data_step: 100
+  HANDOVER_SIM2REAL:
+    stage: finetune

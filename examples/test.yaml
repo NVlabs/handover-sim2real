@@ -1,0 +1,4 @@
+ENV:
+  ID: HandoverHandCameraPointStateEnv-v1
+  HANDOVER_HAND_CAMERA_POINT_STATE_ENV:
+    COMPUTE_MANO_POINT_STATE: True

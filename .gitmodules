@@ -1,0 +1,12 @@
+[submodule "handover-sim"]
+        path = handover-sim
+        url = https://github.com/NVlabs/handover-sim.git
+        branch = master
+[submodule "GA-DDPG"]
+	path = GA-DDPG
+	url = https://github.com/NVlabs/GA-DDPG.git
+	branch = handover-sim2real
+[submodule "OMG-Planner"]
+        path = OMG-Planner
+        url = https://github.com/NVlabs/OMG-Planner.git
+        branch = handover-sim2real

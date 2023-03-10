@@ -1,0 +1,68 @@
+# Copyright (c) 2022-2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#
+# Licensed under the NVIDIA License [see LICENSE for details].
+
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# See the `setuptools_scm` documentation for the description of the schemes used below.
+# https://pypi.org/project/setuptools-scm/
+# NOTE: If these values are updated, they need to be also updated in `handover_sim2real/__init__.py`.
+# NOTE: The `fallback_version` is necessary to prevent an error when attepting to install the
+# project locally and the project is not in a valid git repo or when git is not installed or
+# functioning correctly.
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
+local_scheme = "dirty-tag"
+fallback_version = "0.0.0.dev0"
+
+[tool.black]
+line-length = 100
+extend-exclude = "deprecated/"
+preview = true
+
+[tool.isort]
+# Multi line output mode 3 is used to conform with Black. See
+# https://github.com/PyCQA/isort#multi-line-output-modes
+multi_line_output = 3
+profile = "black"
+import_heading_stdlib = "Standard Library"
+import_heading_thirdparty = "Third Party"
+import_heading_firstparty = "NVIDIA"
+import_heading_localfolder = "Local Folder"
+line_length = 100
+skip_glob = ["deprecated/*", "wip/*"]
+
+[tool.mypy]
+disallow_untyped_defs = true
+no_implicit_optional = true
+show_error_codes = true
+warn_unused_ignores = true
+exclude = [
+    "build",
+    "deprecated",
+    "dist",
+    "docs",
+    "venv",
+    "wip",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "importlib.metadata",
+    "setuptools",
+    "setuptools_scm",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+norecursedirs = [".git", ".venv", "deprecated", "dist", "wip"]
+python_files = ["*_test.py"]
+
+[tool.coverage.report]
+# NOTE: Single-quoted strings are required in TOML for regular expressions
+exclude_lines = [
+    "pragma: no cover", # Need to re-enable the standard no cover match
+    '^\s*pass\s*$',  # Skip any pass lines
+]
