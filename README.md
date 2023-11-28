@@ -193,7 +193,7 @@ Below are the step-by-step installation commands:
     cd ../../python_orocos_kdl
     mkdir -p build && cd build
     # ** IF YOU USE VIRTUALENV: USE $VIRTUAL_ENV BELOW **
-    # ** IF YOU USE CONDA: REMOVE the -DPYTHON_EXECUTABLE FLAG **
+    # ** IF YOU USE CONDA: REMOVE THE -DPYTHON_EXECUTABLE FLAG **
     # ** IF YOU USE NEITHER VIRTUALENV NOR CONDA: YOU MAY NEED TO EDIT -DPYTHON_EXECUTABLE **
     cmake .. \
       -DPYTHON_EXECUTABLE=$VIRTUAL_ENV/bin/python \
