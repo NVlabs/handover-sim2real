@@ -332,7 +332,10 @@ def main():
     cfg.RL_TRAIN.output_time = output_dir
     cfg.RL_TRAIN.model_output_dir = output_dir
     cfg.RL_TRAIN.logdir = ""
-    cfg.omg_config["valid_grasp_dict_path"] = os.path.join("examples", "valid_grasp_dict_005.pkl")
+    if cfg.BENCHMARK.SETUP == "s0":
+        cfg.omg_config["valid_grasp_dict_path"] = os.path.join(
+            "examples", "valid_grasp_dict_005.pkl"
+        )
 
     filename = os.path.join(output_dir, "config.yaml")
     save_cfg_to_file(filename, cfg)
