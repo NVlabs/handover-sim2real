@@ -28,6 +28,8 @@ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023
 
 Handover-Sim2Real is released under the [NVIDIA License](LICENSE).
 
+The pre-trained models are licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
 ### Acknowledgements
 
 This repo is based on a Python project template created by [Rowland O'Flaherty](https://github.com/rowoflo).
