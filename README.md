@@ -122,7 +122,7 @@ Below are the step-by-step installation commands:
     cd ..
 
     # Download data.
-    gdown 136rLjyjFFRMyVxUZT6txB5XR2Ct_LNWC
+    gdown 1Zpcv11HMaFiNd5yNn8QHNSXORJ_8NDjB
     unzip shared_data.zip -d data
 
     cd ..
